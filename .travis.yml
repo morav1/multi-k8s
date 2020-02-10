@@ -14,7 +14,7 @@ before install:
   - gcloud config set project multi-k8s-267713
   - gcloud config set compute/zone europe-west6-c
   - gcloud container clusters get-credentials multi-cluster
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_PASSWORD" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t mavihay/react-test -f ./client/Dockerfile.dev ./client
 script:
   - docker run -e CI=true mavihay/react-test npm run test
