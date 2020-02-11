@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: mooncounters-com-tls
+spec:
+  secretName: mooncounters-com-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: mooncounters.com
+  dnsNames:
+    - mooncounters.com
+    - www.mooncounters.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - mooncounters.com
+          - www.mooncounters.com
+          
