@@ -5,10 +5,9 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: 'mor.avihay@gmail.com'
+    email: "mor.avihay@gmail.com"
     privateKeySecretRef:
       name: letsencrypt-prod
-      http01: {}   
     solvers:
       - http01:
           ingress:
